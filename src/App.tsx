@@ -2,6 +2,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+/* Components */
+import {Header} from './components/Header';
+import {Body} from './components/Body';
+
+/* CSS */
+import './css/main.css';
+
 /* Interfaces */
 interface AppProps{}
 interface AppState{
@@ -20,7 +27,10 @@ export class App extends React.Component<AppProps, AppState> {
 
 	public render() {
 		return(
-			<h1>{this.state.msg}</h1>
+			<>
+				<Header />
+				<Body />
+			</>
 		);
 	}
 }

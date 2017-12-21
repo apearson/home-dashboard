@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+
+	"name": "aPearson Dashboard",
+	"short_name": "Dashboard",
+	"version": "1.0.0",
+
+	"display": "standalone",
+	"orientation": "landscape",
+
+	"background_color": "#1A92AD",
+	"theme_color": "#1A92AD",
+
+	"developer": {
+		"name": "John Andrew Tyler Pearson",
+		"url": "https://apearson.io/"
+	},
+
+	"default_locale": "en",
+	"description": "Personal Home Dashboard for aPearson"
+}

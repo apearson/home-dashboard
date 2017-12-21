@@ -20,12 +20,16 @@
 	"dependencies": {
 		"@types/react": "^16.0.31",
 		"@types/react-dom": "^16.0.3",
+		"chart.js": "^2.7.1",
 		"react": "^16.2.0",
 		"react-dom": "^16.2.0"
 	},
 	"devDependencies": {
 		"awesome-typescript-loader": "^3.4.1",
+		"css-loader": "^0.28.7",
 		"source-map-loader": "^0.2.3",
+		"style-loader": "^0.19.1",
+		"svg-inline-loader": "^0.8.0",
 		"typescript": "^2.6.2",
 		"webpack": "^3.10.0",
 		"webpack-dev-server": "^2.9.7"

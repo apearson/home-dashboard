@@ -1,36 +1,37 @@
 module.exports = {
-	entry: "./src/index.tsx",
+	entry: './src/App.tsx',
+
+
 	output: {
-		filename: "bundle.js",
-		path: __dirname + "/dist",
+		filename: 'bundle.js',
+		path: __dirname + '/dist',
 		publicPath: '/dist/',
 	},
 
-	// Enable sourcemaps for debugging webpack's output.
-	devtool: "source-map",
+	devtool: 'source-map',
 	devServer:{
 		port: 9000,
 		inline: true,
 		overlay: true,
 		historyApiFallback: true,
+		contentBase: './src/'
 	},
 
 	resolve: {
-		extensions: [".ts", ".tsx", ".js", ".json"]
+		extensions: ['.ts', '.tsx', '.js', '.json']
 	},
 
 	module: {
 		rules: [
-			// All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-			{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-
-			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-			{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+			{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+			{ test: /\.css$/,  loader: 'style-loader!css-loader' },
+			{ test: /\.svg$/,  loader: 'svg-inline-loader' },
+			{ enforce: 'pre',  loader: 'source-map-loader', test: /\.js$/, }
 		]
 	},
 
 	externals: {
-		"react": "React",
-		"react-dom": "ReactDOM"
+		'react': 'React',
+		'react-dom': 'ReactDOM'
 	},
 };
