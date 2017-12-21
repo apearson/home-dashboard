@@ -1,34 +1,36 @@
-/* Libraries */
-const path    = require('path');
-const webpack = require('webpack');
-
 module.exports = {
-		entry: './src/main.tsx',
+	entry: "./src/index.tsx",
+	output: {
+		filename: "bundle.js",
+		path: __dirname + "/dist",
+		publicPath: '/dist/',
+	},
 
-		output: {
-			path: path.join(__dirname, './dist'),
-			filename: 'bundle.js',
-		},
+	// Enable sourcemaps for debugging webpack's output.
+	devtool: "source-map",
+	devServer:{
+		port: 9000,
+		inline: true,
+		overlay: true,
+		historyApiFallback: true,
+	},
 
-		devtool: 'source-map',
-		devServer:{
-			publicPath: "/dist/",
-			compress: true,
-			port: 9000,
-			open: true,
-			historyApiFallback: true,
-			overlay: true,
-			inline: true,
-		},
+	resolve: {
+		extensions: [".ts", ".tsx", ".js", ".json"]
+	},
 
-		resolve: {
-				extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
-		},
+	module: {
+		rules: [
+			// All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+			{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
 
-		module: {
-				rules: [
-						{ test: /\.tsx?$/, include: /ClientApp/, loader: 'awesome-typescript-loader' },
-						{ enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
-				]
-		},
+			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+			{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+		]
+	},
+
+	externals: {
+		"react": "React",
+		"react-dom": "ReactDOM"
+	},
 };
