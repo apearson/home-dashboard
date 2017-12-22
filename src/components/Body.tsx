@@ -1,12 +1,18 @@
 /* Libraries */
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+
+/* Components */
+import {UPS} from './UPS';
+import {Sara} from './Sara';
 
 /* Body Class */
-export class Body extends React.Component<{}, {}> {
+export class Body extends React.Component<{}, {}>{
 	public render(){
 		return(
-			<div>Body</div>
+			<div className={'body'}>
+				<UPS/>
+				<Sara/>
+			</div>
 		)
 	}
 }

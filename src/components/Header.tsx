@@ -1,6 +1,5 @@
 /* Libraries */
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
 
 /* Interfaces */
 interface HeaderState{
