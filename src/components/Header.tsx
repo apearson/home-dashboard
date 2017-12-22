@@ -27,7 +27,7 @@ export class Header extends React.Component<{}, HeaderState>{
 		return(
 			<div className={'header'}>
 				<div className={'left'}>
-					<img src={'/images/logo-only.svg'} />
+					<img src={'images/logo-only.svg'} />
 					aPearson Dashboard
 				</div>
 				<div>{this.state.time}</div>
