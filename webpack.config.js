@@ -14,7 +14,6 @@ module.exports = {
 		inline: true,
 		overlay: true,
 		historyApiFallback: true,
-		contentBase: './src/'
 	},
 
 	resolve: {

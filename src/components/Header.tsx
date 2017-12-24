@@ -15,6 +15,8 @@ export class Header extends React.Component<{}, HeaderState>{
 			time: new Date().toLocaleTimeString(),
 		};
 
+		this.updateTime();
+
 		/* Updating time every sec */
 		setInterval(this.updateTime.bind(this), 1000);
 	}

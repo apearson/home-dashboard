@@ -25,6 +25,10 @@ export class UPS extends React.Component<{}, UPSState>{
 			lineVoltage: 0
 		};
 
+		/* Inital update of info */
+		this.updateInfo();
+
+		/* Updating info every 10 secs */
 		setInterval(this.updateInfo.bind(this), 10000);
 	}
 
