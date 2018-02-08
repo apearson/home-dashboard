@@ -1,18 +1,23 @@
+/* Libraries */
+const path = require('path');
+
+/* Webpack config */
 module.exports = {
 	entry: './src/App.tsx',
 
 
 	output: {
 		filename: 'bundle.js',
-		path: __dirname + '/dist',
+		path: path.resolve('public', 'dist'),
 		publicPath: '/dist/',
 	},
 
 	devtool: 'source-map',
 	devServer:{
-		port: 9000,
-		inline: true,
-		overlay: true,
+		contentBase: path.resolve('public'),
+		watchContentBase: true,
+		host: '0.0.0.0',
+		open: true,
 		historyApiFallback: true,
 	},
 
