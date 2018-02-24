@@ -8,8 +8,8 @@
 	"display": "standalone",
 	"orientation": "landscape",
 
-	"background_color": "#1A92AD",
-	"theme_color": "#1A92AD",
+	"background_color": "#2F323B",
+	"theme_color": "#2F323B",
 
 	"developer": {
 		"name": "John Andrew Tyler Pearson",
