@@ -47,14 +47,14 @@ body{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.card-header{
+.card .header{
 
 }
-.card-body{
+.card .body{
 	display: flex;
 	flex-direction: column;
 }
-.card-body div{
+.card .body div{
 	display: flex;
 	justify-content: space-between;
 }

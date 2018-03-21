@@ -2,8 +2,7 @@
 import * as React from 'react';
 
 /* Components */
-import {UPS} from './UPS';
-import {Sara} from './Sara';
+import {UPS} from './cards/UPS';
 
 /* Body Class */
 export class Body extends React.Component<{}, {}>{
@@ -11,7 +10,6 @@ export class Body extends React.Component<{}, {}>{
 		return(
 			<div className={'body'}>
 				<UPS/>
-				<Sara/>
 			</div>
 		)
 	}

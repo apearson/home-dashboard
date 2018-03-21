@@ -1,6 +1,9 @@
 /* Libraries */
 import * as React from 'react';
 
+/* Components */
+import { Card } from '../Base/Card';
+
 /* Interfaces */
 interface UPSState{
 	lastUpdated: Date;
@@ -48,20 +51,14 @@ export class UPS extends React.Component<{}, UPSState>{
 
 	public render(){
 		return(
-			<div className={'ups card'} style={{backgroundColor: '#222222', width: 300}}>
-				<div className={'card-header'}>
-					<div style={{fontSize:22}}>UPS</div>
-					<hr/>
-				</div>
-				<div className={'card-body'}>
-					<div><div>Last update:</div><div>{this.state.lastUpdated.toLocaleString()}</div></div>
-					<div><div>Charge:</div><div>{this.state.charge}</div></div>
-					<div><div>Time left:</div><div>{this.state.timeLeft}</div></div>
-					<div><div>Load:</div><div>{this.state.load}</div></div>
-					<div><div>Time on Battery:</div><div>{this.state.timeOnBattery}</div></div>
-					<div><div>Line Voltage:</div><div>{this.state.lineVoltage}</div></div>
-				</div>
-			</div>
+			<Card title="UPS">
+				<div><div>Last update:</div><div>{this.state.lastUpdated.toLocaleString()}</div></div>
+				<div><div>Charge:</div><div>{this.state.charge}</div></div>
+				<div><div>Time left:</div><div>{this.state.timeLeft}</div></div>
+				<div><div>Load:</div><div>{this.state.load}</div></div>
+				<div><div>Time on Battery:</div><div>{this.state.timeOnBattery}</div></div>
+				<div><div>Line Voltage:</div><div>{this.state.lineVoltage}</div></div>
+			</Card>
 		)
 	}
 }

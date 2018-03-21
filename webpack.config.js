@@ -4,6 +4,7 @@ const path = require('path');
 /* Webpack config */
 module.exports = {
 	entry: './src/App.tsx',
+	mode: 'development',
 
 
 	output: {
@@ -27,15 +28,10 @@ module.exports = {
 
 	module: {
 		rules: [
-			{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+			{ test: /\.tsx?$/, loader: 'ts-loader' },
 			{ test: /\.css$/,  loader: 'style-loader!css-loader' },
 			{ test: /\.svg$/,  loader: 'svg-inline-loader' },
 			{ enforce: 'pre',  loader: 'source-map-loader', test: /\.js$/, }
 		]
-	},
-
-	externals: {
-		'react': 'React',
-		'react-dom': 'ReactDOM'
-	},
+	}
 };
