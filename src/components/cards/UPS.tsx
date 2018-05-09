@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 /* Components */
-import { Card } from '../Base/Card';
+import { Card } from '../base/Card';
 
 /* Interfaces */
 interface UPSState{
