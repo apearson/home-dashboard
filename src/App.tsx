@@ -3,11 +3,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 /* Components */
-import {Header} from './components/Header';
-import {Body} from './components/Body';
+import { Header } from './components/Header';
+import { Body } from './components/Body';
+import { UPS } from "./components/cards/UPS";
 
 /* CSS */
 import './css/main.css';
+import { Light } from "./components/cards/Light";
 
 /* Interfaces */
 interface AppProps{}
@@ -29,7 +31,15 @@ export class App extends React.Component<AppProps, AppState> {
 		return(
 			<>
 				<Header />
-				<Body />
+				<Body>
+					<UPS/>
+					<Light name="Living Room" id="living-room" />
+					<Light name="Bedroom" id="bedroom" />
+					<Light name="Kitchen Sink" id="kitchen-sink" />
+					<Light name="Oven" id="oven" />
+					<Light name="Kitchen Overhead" id="kitchen-overhead" />
+					<Light name="Dining" id="dining" />
+				</Body>
 			</>
 		);
 	}

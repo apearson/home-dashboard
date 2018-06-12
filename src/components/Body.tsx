@@ -9,7 +9,7 @@ export class Body extends React.Component<{}, {}>{
 	public render(){
 		return(
 			<div className={'body'}>
-				<UPS/>
+				{this.props.children}
 			</div>
 		)
 	}
