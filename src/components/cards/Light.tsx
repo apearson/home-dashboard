@@ -13,7 +13,7 @@ interface LightProps{
 /* Body Class */
 export class Light extends React.Component<LightProps>{
 	private switch(state: boolean){
-		fetch(`http://192.168.1.52:1880/api/devices/${this.props.id}`, {
+		fetch(`https://home.apearson.io/api/devices/${this.props.id}`, {
 			method: 'put',
 			headers:{
 				'Content-Type': 'application/json',
