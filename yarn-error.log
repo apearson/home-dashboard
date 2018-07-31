@@ -1,0 +1,57 @@
+Arguments: 
+  /usr/local/Cellar/node/10.6.0/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  10.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
+
+npm manifest: 
+  {
+  	"name": "home-dashboard",
+  	"version": "1.0.0",
+  	"description": "aPearson Home Dashboard",
+  	"scripts": {
+  		"build": "webpack",
+  		"debug": "webpack-dev-server --progress --color"
+  	},
+  	"repository": {
+  		"type": "git",
+  		"url": "git+https://github.com/apearson/home-dashboard.git"
+  	},
+  	"dependencies": {
+  		"chart.js": "^2.7.2",
+  		"ts-loader": "^4.1.0"
+  	},
+  	"devDependencies": {
+  		"@types/react": "^16.0.40",
+  		"@types/react-dom": "^16.0.4",
+  		"css-loader": "^0.28.11",
+  		"react": "^16.2.0",
+  		"react-dom": "^16.2.0",
+  		"source-map-loader": "^0.2.3",
+  		"style-loader": "^0.20.3",
+  		"svg-inline-loader": "^0.8.0",
+  		"typescript": "^2.7.2",
+  		"webpack": "^4.2.0",
+  		"webpack-cli": "^2.0.12",
+  		"webpack-dev-server": "^3.1.1"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

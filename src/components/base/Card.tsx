@@ -9,9 +9,9 @@ export interface CardProps{
 export class Card extends React.Component<CardProps, {}>{
 	public render(){
 		return(
-			<div className={'ups card'} style={{backgroundColor: '#222222', width: 300}}>
-				<div className={'card-header'}>
-					<div style={{fontSize:22}}>{this.props.title}</div>
+			<div className={'card'} style={{backgroundColor: '#222222'}}>
+				<div className={'header'}>
+					{this.props.title}
 					<hr/>
 				</div>
 				<div className={'body'}>

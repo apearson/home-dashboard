@@ -61,13 +61,40 @@ export class UPS extends React.Component<{}, UPSState>{
 		console.log(this.state);
 		return(
 			<Card title="UPS">
-				<div><div>Last update:</div><div>{this.state.lastUpdated.toLocaleString()}</div></div>
-				<div><div>Charge:</div><div>{this.state.charge}</div></div>
-				<div><div>Time left:</div><div>{this.state.timeLeft}</div></div>
-				<div><div>Power:</div><div>{this.state.power} Watts</div></div>
-				<div><div>Load:</div><div>{this.state.load}% ({this.state.load/100 * this.state.power} Watts)</div></div>
-				<div><div>Time on Battery:</div><div>{this.state.timeOnBattery}</div></div>
-				<div><div>Line Voltage:</div><div>{this.state.lineVoltage}</div></div>
+				<div>
+					<div>Last update:</div>
+					<div>{this.state.lastUpdated.toLocaleString()}</div>
+				</div>
+
+				<div>
+					<div>Charge:</div>
+					<div>{this.state.charge}</div>
+				</div>
+
+				<div>
+					<div>Time left:</div>
+					<div>{this.state.timeLeft}</div>
+				</div>
+
+				<div>
+					<div>Power:</div>
+					<div>{this.state.power} Watts</div>
+				</div>
+
+				<div>
+					<div>Load:</div>
+					<div>{this.state.load}% ({(this.state.load/100 * this.state.power).toFixed(1)} Watts)</div>
+				</div>
+
+				<div>
+					<div>Time on Battery:</div>
+					<div>{this.state.timeOnBattery}</div>
+				</div>
+
+				<div>
+					<div>Line Voltage:</div>
+					<div>{this.state.lineVoltage}</div>
+				</div>
 			</Card>
 		)
 	}

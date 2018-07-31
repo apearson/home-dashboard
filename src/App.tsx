@@ -1,15 +1,15 @@
 /* Libraries */
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 /* Components */
 import { Header } from './components/Header';
 import { Body } from './components/Body';
-import { UPS } from "./components/cards/UPS";
+import { UPS } from './components/cards/UPS';
 
 /* CSS */
 import './css/main.css';
-import { Light } from "./components/cards/Light";
+import { Light } from './components/cards/Light';
 
 /* Interfaces */
 interface AppProps{}

@@ -28,13 +28,13 @@ export class Header extends React.Component<{}, HeaderState>{
 
 	public render(){
 		return(
-			<div className={'header'}>
-				<div className={'left'}>
+			<nav>
+				<div className={'logo'}>
 					<img src={'images/logo-only.svg'} />
 					aPearson Dashboard
 				</div>
-				<div>{this.state.time}</div>
-			</div>
+				{this.state.time}
+			</nav>
 		)
 	}
 }

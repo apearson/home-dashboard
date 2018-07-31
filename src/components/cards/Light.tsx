@@ -13,7 +13,7 @@ interface LightProps{
 /* Body Class */
 export class Light extends React.Component<LightProps>{
 	private switch(state: boolean){
-		fetch(`https://home.apearson.io/api/devices/${this.props.id}`, {
+		fetch(`http://192.168.1.52:1880/api/devices/${this.props.id}`, {
 			method: 'put',
 			headers:{
 				'Content-Type': 'application/json',
@@ -27,8 +27,8 @@ export class Light extends React.Component<LightProps>{
 		return(
 			<Card title={`Light ${this.props.name}`}>
 				<div style={{display: 'flex'}}>
-					<button style={{flexGrow: 1, height: 120}} onClick={()=> this.switch(true)}>On</button>
-					<button style={{flexGrow: 1, height: 120}} onClick={()=> this.switch(false)}>Off</button>
+					<button style={{flexGrow: 1, height: 120, margin: 5}} onClick={()=> this.switch(true)}>On</button>
+					<button style={{flexGrow: 1, height: 120, margin: 5}} onClick={()=> this.switch(false)}>Off</button>
 				</div>
 			</Card>
 		)

@@ -3,10 +3,20 @@ body{
 	background-color: #2F323B;
 	font-family: 'Roboto', sans-serif;
 	color: white;
+
+	display: grid;
+	grid-row-gap: 10px;
+	grid-template:
+		"header"
+		"body";
 }
 
 /* Header */
-.header{
+nav{
+	/* Grid Metadata */
+	grid-area: nav;
+
+	/* Layout */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -17,23 +27,19 @@ body{
 	padding: 10px;
 	box-sizing: border-box;
 }
-.header .left{
+nav .logo{
 	display: flex;
 	align-items: center;
 }
-.header img{
+nav img{
 	height: 50px;
 	padding-top: 15px;
 }
 
 /* Body */
-.body{
+main{
 	display: flex;
 	flex-wrap: wrap;
-}
-
-/* UPS */
-.ups{
 }
 
 /* Card Style */
@@ -42,13 +48,14 @@ body{
 	transition: 300ms;
 	padding: 10px;
 	margin: 10px;
+	width: 100%;
 }
 .card:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card .header{
-
+	font-size: 22px;
 }
 .card .body{
 	display: flex;
