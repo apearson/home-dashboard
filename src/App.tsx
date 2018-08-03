@@ -1,20 +1,30 @@
 /* Libraries */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import {MuiThemeProvider as Themer } from '@material-ui/core/styles';
+
+/* Library Components */
+import SwipeableViews from 'react-swipeable-views';
 
 /* Components */
 import { Header } from './components/Header';
 import { Body } from './components/Body';
-import { UPS } from './components/cards/UPS';
+import { Footer } from './components/Footer';
+
+/* Pages */
+import { LightsPage } from './pages/LightsPage';
+import { PowerPage } from './pages/PowerPage';
+
+/* Theme */
+import {theme} from './theme';
 
 /* CSS */
 import './css/main.css';
-import { Light } from './components/cards/Light';
 
 /* Interfaces */
 interface AppProps{}
 interface AppState{
-	msg: string;
+	tab: number;
 }
 
 /* App Class */
@@ -22,8 +32,9 @@ export class App extends React.Component<AppProps, AppState> {
 	constructor(props: {}){
 		super(props);
 
+		/* Creating state */
 		this.state = {
-			msg: 'Hello React',
+			tab: 0,
 		}
 	}
 
@@ -31,19 +42,19 @@ export class App extends React.Component<AppProps, AppState> {
 		return(
 			<>
 				<Header />
+
 				<Body>
-					<UPS/>
-					<Light name="Living Room" id="living-room" />
-					<Light name="Bedroom" id="bedroom" />
-					<Light name="Kitchen Sink" id="kitchen-sink" />
-					<Light name="Oven" id="oven" />
-					<Light name="Kitchen Overhead" id="kitchen-overhead" />
-					<Light name="Dining" id="dining" />
+					<SwipeableViews style={{width: '100%'}} index={this.state.tab} onChangeIndex={(tab)=> this.setState({tab})}>
+						<LightsPage />
+						<PowerPage />
+					</SwipeableViews>
 				</Body>
+
+				<Footer tabIndex={this.state.tab} onChange={(event, tab)=> this.setState({tab})} />
 			</>
 		);
 	}
 }
 
 /* Rendering to page */
-ReactDOM.render(<App/>, document.getElementById("app") );
+ReactDOM.render(<Themer theme={theme}><App/></Themer>, document.getElementById("app") );

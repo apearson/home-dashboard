@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 /* Components */
-import { Card } from '../base/Card';
+import { Card } from '@material-ui/core';
 
 /* Interfaces */
 interface UPSState{
@@ -16,7 +16,7 @@ interface UPSState{
 };
 
 /* Body Class */
-export class UPS extends React.Component<{}, UPSState>{
+export class UPS extends React.PureComponent<{}, UPSState>{
 	constructor(props: {}){
 		super(props);
 
@@ -30,9 +30,6 @@ export class UPS extends React.Component<{}, UPSState>{
 			lineVoltage: 0
 		};
 
-		/* Inital update of info */
-		this.updateInfo();
-
 		/* Updating info every 10 secs */
 		setInterval(this.updateInfo.bind(this), 10000);
 	}
@@ -43,8 +40,6 @@ export class UPS extends React.Component<{}, UPSState>{
 
 		const wattage = parseInt(data.NOMPOWER.match(/(\d+) Watts/)[1]);
 		const load = parseFloat(data.LOADPCT.match(/(\d+.*\d*) Percent/)[1]);
-
-		console.log(wattage, load);
 
 		this.setState({
 			lastUpdated: new Date(),
@@ -57,41 +52,50 @@ export class UPS extends React.Component<{}, UPSState>{
 		})
 	}
 
+	public componentDidMount(){
+		/* Inital update of info */
+		this.updateInfo();
+	}
+
 	public render(){
-		console.log(this.state);
+		console.log('Rendering ups');
 		return(
-			<Card title="UPS">
-				<div>
+			<Card style={{display: 'flex', flexDirection: 'column', padding: 10, backgroundColor: '#222222', color: '#ffffff'}}>
+				<div style={{fontSize: 22}}>
+					UPS
+				</div>
+				<hr style={{width: '100%'}}/>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Last update:</div>
 					<div>{this.state.lastUpdated.toLocaleString()}</div>
 				</div>
 
-				<div>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Charge:</div>
 					<div>{this.state.charge}</div>
 				</div>
 
-				<div>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Time left:</div>
 					<div>{this.state.timeLeft}</div>
 				</div>
 
-				<div>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Power:</div>
 					<div>{this.state.power} Watts</div>
 				</div>
 
-				<div>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Load:</div>
 					<div>{this.state.load}% ({(this.state.load/100 * this.state.power).toFixed(1)} Watts)</div>
 				</div>
 
-				<div>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Time on Battery:</div>
 					<div>{this.state.timeOnBattery}</div>
 				</div>
 
-				<div>
+				<div style={{display: 'flex', justifyContent: 'space-between'}}>
 					<div>Line Voltage:</div>
 					<div>{this.state.lineVoltage}</div>
 				</div>

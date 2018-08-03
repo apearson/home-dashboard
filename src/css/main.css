@@ -1,8 +1,9 @@
 body{
 	margin: 0px;
+	box-sizing: border-box;
 	background-color: #2F323B;
 	font-family: 'Roboto', sans-serif;
-	color: white;
+	/* color: white; */
 
 	display: grid;
 	grid-row-gap: 10px;
@@ -15,6 +16,7 @@ body{
 nav{
 	/* Grid Metadata */
 	grid-area: nav;
+	position: sticky;
 
 	/* Layout */
 	display: flex;
@@ -47,7 +49,8 @@ main{
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	transition: 300ms;
 	padding: 10px;
-	margin: 10px;
+	box-sizing: border-box;
+	/* margin: 10px; */
 	width: 100%;
 }
 .card:hover {
@@ -64,4 +67,8 @@ main{
 .card .body div{
 	display: flex;
 	justify-content: space-between;
+}
+
+.white{
+	color: #ffffff;
 }

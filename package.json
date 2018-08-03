@@ -11,12 +11,16 @@
 		"url": "git+https://github.com/apearson/home-dashboard.git"
 	},
 	"dependencies": {
+		"@material-ui/core": "^1.4.2",
+		"@material-ui/icons": "^2.0.0",
 		"chart.js": "^2.7.2",
+		"react-swipeable-views": "^0.12.15",
 		"ts-loader": "^4.1.0"
 	},
 	"devDependencies": {
 		"@types/react": "^16.0.40",
 		"@types/react-dom": "^16.0.4",
+		"@types/react-swipeable-views": "^0.12.1",
 		"css-loader": "^0.28.11",
 		"react": "^16.2.0",
 		"react-dom": "^16.2.0",
