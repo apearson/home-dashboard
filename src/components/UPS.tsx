@@ -52,11 +52,13 @@ export class UPS extends React.PureComponent<{}, UPSState>{
 		})
 	}
 
+	/* React Lifecycle */
 	public componentDidMount(){
 		/* Inital update of info */
 		this.updateInfo();
 	}
 
+	/* React Render */
 	public render(){
 		console.log('Rendering ups');
 		return(

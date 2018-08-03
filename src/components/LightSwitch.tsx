@@ -35,6 +35,7 @@ export class LightSwitch extends React.PureComponent<LightSwitchProps, LightSwit
 		this.setState({state});
 	}
 
+	/* React Render */
 	public render(){
 		console.log('Rendering Light', this.props.name);
 		return(

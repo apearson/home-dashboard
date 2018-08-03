@@ -10,6 +10,7 @@ import { Page } from '../components/Page';
 
 /* Page Class */
 export class LightsPage extends React.PureComponent{
+	/* React Render */
 	public render(){
 		return(
 			<Page>

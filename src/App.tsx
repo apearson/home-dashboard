@@ -38,6 +38,7 @@ export class App extends React.Component<AppProps, AppState> {
 		}
 	}
 
+	/* React Render */
 	public render() {
 		return(
 			<>

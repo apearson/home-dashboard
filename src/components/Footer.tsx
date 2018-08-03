@@ -10,6 +10,7 @@ interface FooterProps{
 
 /* Page Class */
 export class Footer extends React.PureComponent<FooterProps>{
+	/* React Render */
 	public render(){
 		return(
 			<Paper style={{position: 'absolute', bottom: 0, left: 0, width: '100%'}} square>

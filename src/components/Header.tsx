@@ -28,6 +28,7 @@ export class Header extends React.PureComponent<{}, HeaderState>{
 		this.setState({time: new Date().toLocaleTimeString()});
 	}
 
+	/* React Render */
 	public render(){
 		return(
 			<AppBar position="sticky">

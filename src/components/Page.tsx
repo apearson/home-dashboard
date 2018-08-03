@@ -9,6 +9,7 @@ const pageStyle: React.CSSProperties = {
 
 /* Page Class */
 export class Page extends React.PureComponent{
+	/* React Render */
 	public render(){
 		return(
 			<div style={pageStyle}>

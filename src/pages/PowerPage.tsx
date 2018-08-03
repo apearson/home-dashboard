@@ -7,6 +7,7 @@ import { UPS } from '../components/UPS';
 
 /* Page Class */
 export class PowerPage extends React.PureComponent{
+	/* React Render */
 	public render(){
 		return(
 			<Page>
