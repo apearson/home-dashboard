@@ -20,6 +20,7 @@ export class LightsPage extends React.PureComponent{
 					</div>
 					<hr style={{width: '100%'}}/>
 					<LightSwitch name="Living Room" id="living-room" />
+					<LightSwitch name="Living Room Lamp" id="living-room-lamp" />
 					<LightSwitch name="Bedroom" id="bedroom" />
 					<LightSwitch name="Kitchen Sink" id="kitchen-sink" />
 					<LightSwitch name="Oven" id="oven" />
