@@ -7,6 +7,7 @@ import { Card } from '@material-ui/core';
 /* Components */
 import { LightSwitch } from '../components/LightSwitch';
 import { Page } from '../components/Page';
+import { GroupSwitch } from '../components/GroupSwitch';
 
 /* Page Class */
 export class LightsPage extends React.PureComponent{
@@ -14,7 +15,16 @@ export class LightsPage extends React.PureComponent{
 	public render(){
 		return(
 			<Page>
-				<Card style={{display: 'flex', flexDirection: 'column', padding: 15}}>
+				<Card style={{display: 'flex', flexDirection: 'column', padding: 15, marginBottom: 10}}>
+					<div style={{fontSize: 22}}>
+						Groups
+					</div>
+					<hr style={{width: '100%'}}/>
+					<GroupSwitch name="Living Room" id="living-room" />
+					<GroupSwitch name="Kitchen" id="kitchen" />
+					<GroupSwitch name="Bedroom" id="bedroom" />
+				</Card>
+				<Card style={{display: 'flex', flexDirection: 'column', padding: 15, marginBottom: 10}}>
 					<div style={{fontSize: 22}}>
 						Lights
 					</div>
