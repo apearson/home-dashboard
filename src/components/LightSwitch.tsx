@@ -24,7 +24,7 @@ export class LightSwitch extends React.PureComponent<LightSwitchProps, LightSwit
 	}
 
 	private switch(state: boolean){
-		fetch(`https://home.apearson.io/api/devices/${this.props.id}`, {
+		fetch(`https://home.apearson.io/api/devices/lights/${this.props.id}`, {
 			method: 'put',
 			headers:{
 				'Content-Type': 'application/json',
