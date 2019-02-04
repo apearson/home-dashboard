@@ -2,16 +2,29 @@
 import * as React from 'react';
 
 /* Components */
-import { FormControlLabel, Switch } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 /* Interfaces */
 interface GroupSwitchProps{
 	name: string;
 	id: string;
+	style?: React.CSSProperties;
 }
 interface GroupSwitchState{
 	state: boolean;
 }
+
+/* Styles */
+const componentStyle: React.CSSProperties = {
+	display: 'flex',
+	justifyContent: 'space-between',
+	alignItems: 'center'
+};
+
+const buttonStyle: React.CSSProperties = {
+	marginLeft: 5,
+	marginRight: 5
+};
 
 /* Body Class */
 export class GroupSwitch extends React.PureComponent<GroupSwitchProps, GroupSwitchState>{
@@ -24,7 +37,7 @@ export class GroupSwitch extends React.PureComponent<GroupSwitchProps, GroupSwit
 	}
 
 	private switch(state: boolean){
-		fetch(`https://home.apearson.io/api/devices/groups/${this.props.id}`, {
+		fetch(`https://home.apearson.io/api/devices/scenes/${this.props.id}`, {
 			method: 'put',
 			headers:{
 				'Content-Type': 'application/json',
@@ -37,21 +50,22 @@ export class GroupSwitch extends React.PureComponent<GroupSwitchProps, GroupSwit
 
 	/* React Render */
 	public render(){
-		console.log('Rendering Light', this.props.name);
+		console.log('Rendering Group', this.props.name);
 		return(
-			<FormControlLabel
-				label={`${this.props.name} Light`}
-				classes={{label: '.white'}}
-				color="secondary"
-				control={
-					<Switch
-						checked={this.state.state}
-						color="secondary"
-						onChange={(event: object, checked: boolean)=> this.switch(checked)}
-						value={this.state.state? 'On':'Off'}
-					/>
-				}
-			/>
+			<div style={{...componentStyle, ...this.props.style}}>
+				{/* Name */}
+				<label>{this.props.name}</label>
+
+				{/* Buttons */}
+				<div>
+					<Button variant='contained' color='primary' onClick={()=> this.switch(true)} style={buttonStyle}>
+						On
+					</Button>
+					<Button variant='contained' color='primary' onClick={()=> this.switch(false)} style={buttonStyle}>
+						Off
+					</Button>
+				</div>
+			</div>
 		)
 	}
 }

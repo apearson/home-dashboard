@@ -17,6 +17,13 @@ export class LightsPage extends React.PureComponent{
 			<Page>
 				<Card style={{display: 'flex', flexDirection: 'column', padding: 15, marginBottom: 10}}>
 					<div style={{fontSize: 22}}>
+						Scenes
+					</div>
+					<hr style={{width: '100%'}}/>
+					<GroupSwitch name="Home" id="normal" />
+				</Card>
+				<Card style={{display: 'flex', flexDirection: 'column', padding: 15, marginBottom: 10}}>
+					<div style={{fontSize: 22}}>
 						Groups
 					</div>
 					<hr style={{width: '100%'}}/>
