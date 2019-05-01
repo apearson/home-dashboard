@@ -6,6 +6,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 
+///@ts-ignore
+import logo from '../images/logo-only.svg';
+
 /* Interfaces */
 interface HeaderState{
 	time: string;
@@ -34,7 +37,7 @@ export class Header extends React.PureComponent<{}, HeaderState>{
 			<AppBar position="sticky">
 				<Toolbar>
 					<IconButton style={{marginLeft: -12, marginRight: 20}} color="inherit" aria-label="Menu">
-						<img src={'images/logo-only.svg'} style={{height: 50, paddingTop: 7}} />
+						<img src={logo} style={{height: 50, paddingTop: 7}} />
 					</IconButton>
 					<div style={{flexGrow: 1}}>
 						aPearson Dashboard

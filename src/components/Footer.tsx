@@ -17,7 +17,7 @@ export class Footer extends React.PureComponent<FooterProps>{
 				<Tabs
 					value={this.props.tabIndex}
 					onChange={this.props.onChange}
-					fullWidth
+					variant="fullWidth"
 					indicatorColor="secondary"
 					textColor="secondary"
 				>
